@@ -1,15 +1,22 @@
 @use "src/App.scss" as *;
 
-.card {
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menuitem {
   background-color: $primary;
-  height: 15vw;
+  height: 4vw;
   width: 15vw;
-  text-align: center;
+  border: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 4vw;
-  color: $primary-dark;
+  align-items: center;
+  margin: 1vw;
+  color: white;
+  font-family: unset;
 
   > h2 {
     font-size: 1.5vw;
@@ -17,8 +24,12 @@
 
   &:hover {
     transform: translateY(-5px) scale(1.005) translateZ(0);
-    box-shadow: 0 24px 36px $primary-dark,
-    0 24px 46px $primary-dark;
+    box-shadow: $shadow;
     border: none;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 0;
   }
 }

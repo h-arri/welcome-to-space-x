@@ -1,0 +1,16 @@
+@use "src/App.scss" as *;
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+  font-size: 1.5vw;
+  color: $primary-dark;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
+}
