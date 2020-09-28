@@ -1,0 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
+$primary: #00deaf;
+$primary-light: #d1fff5;
+$primary-dark: #25796e;
+
+body {
+  background-color: $primary-light;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+  font-size: 2vw;
+  color: $primary-dark;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

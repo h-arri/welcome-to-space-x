@@ -1,0 +1,24 @@
+@use "src/App.scss" as *;
+
+.card {
+  background-color: $primary;
+  height: 15vw;
+  width: 15vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 4vw;
+  color: $primary-dark;
+
+  > h2 {
+    font-size: 1.5vw;
+  }
+
+  &:hover {
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+    box-shadow: 0 24px 36px $primary-dark,
+    0 24px 46px $primary-dark;
+    border: none;
+  }
+}
