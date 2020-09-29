@@ -22,7 +22,8 @@
     font-size: 1.5vw;
   }
 
-  &:hover {
+  &:hover,
+  &.selected {
     transform: translateY(-5px) scale(1.005) translateZ(0);
     box-shadow: $shadow;
     border: none;

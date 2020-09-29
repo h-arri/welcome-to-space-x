@@ -1,0 +1,30 @@
+.content {
+  .title, .details {
+    margin: 0;
+    padding: 4px
+  }
+
+  padding: 24px;
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+
+  > a {
+    margin: 2% 2% 0;
+  }
+}
+
+.success {
+  color: forestgreen;
+}
+
+.failure {
+  color: red;
+}
+
+.location {
+  text-align: end;
+  font-weight: 300;
+}

@@ -66,30 +66,3 @@ $check-size: 20px;
     }
   }
 }
-
-.content {
-  .title, .details {
-    margin: 0;
-    padding: 4px
-  }
-
-  padding: 24px;
-}
-
-.column {
-  & > .title {
-    text-align: center;
-  }
-
-  float: left;
-  width: 50%;
-}
-
-.links {
-  display: flex;
-  justify-content: flex-end;
-
-  > a {
-    margin: 2% 2% 0;
-  }
-}
