@@ -7,7 +7,7 @@ import Wikipedia from "../../icons/wikipedia.png";
 import YouTube from "../../icons/youtube.png";
 
 const CardContent = (props) => {
-    const {data, type} = props;
+    const {data} = props;
     const iconStyle = {margin: '4% 1% 0'};
     const titleStyle = styles.title + ' ' + (data.launch_success ? styles.success : styles.failure);
 

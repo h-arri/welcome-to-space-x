@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './Menu.scss';
 
 const Menu = (props) => {
-    const [selectedItem, setSelectedItem] = useState("");
+    const [selectedItem, setSelectedItem] = useState('history');
     const handleSelect = menuitem => {
         setSelectedItem(menuitem)
         props.handleSelect(menuitem);

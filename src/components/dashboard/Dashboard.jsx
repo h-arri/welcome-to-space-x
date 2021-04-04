@@ -1,7 +1,7 @@
 import styles from "./Dashboard.scss";
 import Menu from "../menu/Menu";
 import { connect, useDispatch, useSelector } from "react-redux";
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { getHistoryApi } from "../../store/actions/history";
 import Card from "../card/Card";
 import { getLaunchesApi } from "../../store/actions/launches";
@@ -12,7 +12,11 @@ const Dashboard = () => {
     const launches = useSelector(state => state.launches.launches);
 
     const [show, setShow] = useState('history');
-    const [selected, setSelected] = useState([]);
+    const [selected, setSelected] = useState({ history: [], launches: [] });
+
+    useEffect(() => {
+        dispatch(getHistoryApi());
+    }, [dispatch])
 
     const handleShow = (menuitem) => {
         switch (menuitem) {
@@ -33,15 +37,15 @@ const Dashboard = () => {
         }
     };
 
-    const handleItemSelected = (index) => {
-        let selectedIndexes = [...selected];
+    const handleItemSelected = (index, type) => {
+        let selectedIndexes = [...selected[type]];
         let selectedIndex = selectedIndexes.indexOf(index);
         if (selectedIndex > -1) {
             selectedIndexes.splice(selectedIndex, 1);
         } else {
             selectedIndexes.push(index);
         }
-        setSelected([...selectedIndexes]);
+        setSelected({ ...selected, [type]: [...selectedIndexes] });
         // these selected items can then be shared using a FloatingButton component
     };
 
@@ -54,10 +58,10 @@ const Dashboard = () => {
         <main className={styles.wrapper}>{
             show === 'history' ? history.map(item => (
                     <Card key={item.id} selected={selected} data={item}
-                          onClick={() => handleItemSelected(item.id)} type='history'/>))
-                : launches.map(item => (
-                    <Card key={item.flight_number} selected={selected} data={item}
-                          onClick={() => handleItemSelected(item.id)} type='launches'/>))
+                          onClick={() => handleItemSelected(item.id, 'history')} type='history'/>))
+                : launches.map((item, index) => (
+                    <Card key={item.flight_number + '' + index} selected={selected} data={item}
+                          onClick={() => handleItemSelected(item.flight_number, 'launches')} type='launches'/>))
         }
         </main>
     </>)
