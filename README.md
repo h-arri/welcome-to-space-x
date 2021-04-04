@@ -9,6 +9,6 @@ Welcome to SpaceX - Single-page application show casing space-x's launches and t
 
 run `npm start` to start the application, and it will be available on `http://localhost:8080/`
 
-## Demo
+### Demo
 You can view the application deployed on GitHub pages 
 [Take a look here](https://h-arri.github.io/welcome-to-space-x/)
